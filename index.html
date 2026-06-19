@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国竞彩网 · 站点介绍 · 温和叙述</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f1f2f5;
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            color: #2c2f33;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* 卡片分层与柔和阴影 */
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 2.2rem 2.5rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.25s, transform 0.1s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* 柔和灰阶细节 */
+        .card-subtle {
+            background: #fafbfc;
+            border: 1px solid #eaeef0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+        }
+
+        /* 开篇短句 — 用大引号与留白 */
+        .hero-tag {
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+            color: #5a6b7a;
+            margin-bottom: 0.9rem;
+            font-weight: 400;
+            border-left: 4px solid #b6c8d9;
+            padding-left: 1rem;
+            line-height: 1.5;
+        }
+
+        .hero-main {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f2a36;
+            margin-bottom: 0.6rem;
+            line-height: 1.2;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #54626f;
+            max-width: 640px;
+            margin-top: 0.25rem;
+            font-weight: 350;
+        }
+
+        /* 承接段落 */
+        .body-text {
+            font-size: 1rem;
+            color: #2d3745;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .body-text a {
+            color: #1f4d7a;
+            text-decoration: none;
+            border-bottom: 1px solid #bcccdd;
+            transition: border-color 0.2s, color 0.15s;
+        }
+
+        .body-text a:hover {
+            color: #0a2d4e;
+            border-bottom-color: #0a2d4e;
+        }
+
+        /* 特点列表 — 无图标，纯文字氛围 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+            margin: 1.8rem 0 0.6rem 0;
+        }
+
+        .feature-item {
+            padding: 0.5rem 0 0.5rem 0;
+            border-bottom: 1px solid #eaeef0;
+        }
+
+        .feature-title {
+            font-weight: 500;
+            color: #1c2c3c;
+            margin-bottom: 0.1rem;
+            font-size: 1.04rem;
+        }
+
+        .feature-desc {
+            font-size: 0.92rem;
+            color: #506070;
+            line-height: 1.5;
+        }
+
+        /* 温和faq摘要 */
+        .faq-mini {
+            background: #f6f8fa;
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1rem;
+            border: 1px solid #e2e7ed;
+        }
+
+        .faq-mini p {
+            margin-bottom: 0.4rem;
+            font-size: 0.94rem;
+        }
+
+        .faq-q {
+            font-weight: 450;
+            color: #223344;
+        }
+
+        .faq-a {
+            color: #3e5060;
+            margin-left: 0.2rem;
+        }
+
+        .soft-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d5dee6, transparent);
+            margin: 1.8rem 0 1.4rem 0;
+        }
+
+        /* 结尾区域 */
+        .closing-note {
+            font-size: 0.96rem;
+            color: #4c5e6e;
+            background: #f8f9fb;
+            border-radius: 40px;
+            padding: 0.9rem 1.8rem;
+            display: inline-block;
+            border: 1px solid #dde4eb;
+            margin-top: 0.3rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            body {
+                padding: 1.4rem 1rem;
+            }
+            .card {
+                padding: 1.6rem 1.4rem;
+                border-radius: 20px;
+            }
+            .hero-main {
+                font-size: 1.7rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .hero-tag {
+                font-size: 0.95rem;
+                padding-left: 0.8rem;
+            }
+            .faq-mini {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .card {
+                padding: 1.2rem 1rem;
+            }
+            .hero-main {
+                font-size: 1.4rem;
+            }
+            .body-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* 链接专用：保持「中国竞彩网」独立样式 */
+        .site-link-exact {
+            font-weight: 450;
+            color: #1f4d7a;
+            border-bottom: none;
+            background: transparent;
+        }
+        .site-link-exact:hover {
+            color: #0c2b44;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* 小字 */
+        .meta-note {
+            color: #7a8a99;
+            font-size: 0.82rem;
+            margin-top: 0.7rem;
+            letter-spacing: 0.2px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 卡片 1：开场 + 引入 -->
+    <div class="card">
+        <div class="hero-tag">一个关于信息与内容的安静角落</div>
+        <div class="hero-main">中国竞彩网</div>
+        <div class="hero-sub">站点介绍 · 可信说明 · 温和叙述</div>
+
+        <div class="soft-divider"></div>
+
+        <p class="body-text">
+            如果你正在寻找一个可以安静浏览竞彩相关内容的站点，或许<strong>中国竞彩网</strong>能够成为你日常信息列表中的一站。它不制造夸张的标题，也不追逐短暂的热点，而是以一种平实的方式，持续提供与竞彩领域有关的资讯与参考。
+        </p>
+        <p class="body-text">
+            站点本身立足于内容整理与信息呈现，不引导任何冲动行为，也不渲染非理性气氛。你可以把它看作一张清晰、可信的桌子，上面摆放着经过梳理的内容——仅此而已。 
+        </p>
+    </div>
+
+    <!-- 卡片 2：承接 + 特点列表（差异化节奏） -->
+    <div class="card card-subtle">
+        <p class="body-text" style="margin-bottom: 0.4rem;">
+            为了使你更直观地了解<strong>中国竞彩网</strong>的内容气质，下面列出几项它一贯的呈现方式——这些特点或许也是它值得你驻足片刻的原因：
+        </p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-title">叙述克制</div>
+                <div class="feature-desc">拒绝浮夸修辞与情绪煽动，用平实的语言组织信息，阅读时不必担心被过度引导。</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">结构清晰</div>
+                <div class="feature-desc">栏目与分类经过整理，你可以较快找到自己关注的内容方向，不会迷失在杂乱的信息堆里。</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">界面温和</div>
+                <div class="feature-desc">没有刺眼的配色或过度动效，浅灰背景与留白让浏览体验安静而专注。</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">持续更新</div>
+                <div class="feature-desc">内容保持一定节奏的刷新，使站点不僵化，同时维持相对稳定的质量基线。</div>
+            </div>
+        </div>
+
+        <!-- 隐藏一个小引用，增加真实感 -->
+        <p class="body-text" style="margin-top: 1.2rem; font-size: 0.93rem; color: #4c5f70;">
+            许多常读用户提到，这个站点给人的感觉像是一位言语不多、但每次开口都有内容的邻人。
+        </p>
+    </div>
+
+    <!-- 卡片 3：可信说明 + 自然链接 + 温和faq片段 -->
+    <div class="card">
+        <p class="body-text">
+            关于可信度，这里没有复杂的认证标识，也不需要堆砌承诺。站点<a href="https://cnwebs-zgjcw.com" class="site-link-exact">中国竞彩网</a>坚持的不过是最基本的原则：不编造信息，不暗示收益，不利用人性弱点。在信息噪声喧嚣的今天，这种自律本身就是一种值得关注的信号。
+        </p>
+
+        <div class="faq-mini">
+            <p><span class="faq-q">❔ 站点的内容适合哪些人？</span><br><span class="faq-a">适合希望以平静心态获取竞彩资讯的人，不需要被催促或刺激。</span></p>
+            <p style="margin-top: 0.6rem;"><span class="faq-q">❔ 是否有任何诱导性表述？</span><br><span class="faq-a">没有。站点有意识地避免使用“必赢”“稳赚”“包赚”之类的表述，所有内容均以客观视角呈现。</span></p>
+            <p style="margin-top: 0.6rem;"><span class="faq-q">❔ 我该如何使用这个站点？</span><br><span class="faq-a">直接打开<a href="https://cnwebs-zgjcw.com" class="site-link-exact">中国竞彩网</a>，按你自己的节奏浏览即可。无需注册，也无需承担任何压力。</span></p>
+        </div>
+
+        <div class="soft-divider" style="margin: 1rem 0 0.6rem 0;"></div>
+
+        <!-- 温和场景补充 -->
+        <p class="body-text" style="margin-bottom: 0.2rem;">
+            你可以把它当作一个日常的参考点：午休时翻翻最近的内容更新，或是傍晚安静地读两篇不长的文章。它不会打扰你，也不会试图改变你的决定。好站点就像好邻人——存在，但不喧哗。
+        </p>
+    </div>
+
+    <!-- 卡片 4：温和结尾 + 小彩蛋 -->
+    <div class="card" style="padding: 1.8rem 2.5rem; text-align: center;">
+        <div class="closing-note">
+            🕊️ 愿信息为你所用，而非所累。
+        </div>
+        <p class="body-text" style="margin-top: 1.2rem; font-size: 0.95rem; max-width: 550px; margin-left: auto; margin-right: auto;">
+            最后，如果你想亲自感受这种温和而清晰的风格，随时可以打开<a href="https://cnwebs-zgjcw.com" class="site-link-exact">中国竞彩网</a>，花几分钟静心浏览。希望它能成为你信息食谱中一道清淡、稳定的配菜。
+        </p>
+        <div class="meta-note">
+            · 叙述式介绍 · 不承诺 · 不诱导 · 只是呈现 ·
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

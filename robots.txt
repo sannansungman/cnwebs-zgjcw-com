@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sannansungman.github.io/cnwebs-zgjcw-com/sitemap.xml
